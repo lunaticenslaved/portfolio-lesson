@@ -2,11 +2,16 @@
 
 import { motion } from 'framer-motion';
 
+import { useListenSectionInView } from '@/context/active-section';
+
 import { SectionHeading } from './section-heading';
 
 export function About() {
+  const ref = useListenSectionInView('About', 1);
+
   return (
     <motion.section
+      ref={ref}
       id="about"
       className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}

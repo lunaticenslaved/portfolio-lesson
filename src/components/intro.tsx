@@ -8,9 +8,16 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useListenSectionInView } from '@/context/active-section';
+
 export function Intro() {
+  const ref = useListenSectionInView('Home', 0.5);
+
   return (
-    <section id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+    <section
+      ref={ref}
+      id="home"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -58,7 +65,7 @@ export function Intro() {
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition group">
           Contact me here
-          <BsArrowRight classNames="opacity-70 group-hover:translate-x-1 transition" />
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <a
           className="cursor-pointer bg-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition group border border-black/10"

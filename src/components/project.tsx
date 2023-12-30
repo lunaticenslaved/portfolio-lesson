@@ -1,6 +1,6 @@
 'use client';
 
-import { createRef } from 'react';
+import { useRef } from 'react';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import { projectsData } from '@/shared/data';
 type ProjectProps = (typeof projectsData)[number];
 
 export function Project({ title, description, tags, imageUrl }: ProjectProps) {
-  const rootRef = createRef<HTMLDivElement>();
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: rootRef,
