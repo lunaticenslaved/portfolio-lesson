@@ -8,9 +8,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useListenSectionInView } from '@/context/active-section';
+import { useActiveSectionContext, useListenSectionInView } from '@/context/active-section';
 
 export function Intro() {
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useListenSectionInView('Home', 0.5);
 
   return (
@@ -62,13 +63,17 @@ export function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}>
         <Link
+          onClick={() => {
+            setActiveSection('Contact');
+            setTimeOfLastClick(Date.now());
+          }}
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition group">
           Contact me here
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <a
-          className="cursor-pointer bg-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition group border border-black/10"
+          className="cursor-pointer bg-white px-7 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition group borderBlack"
           href="/CV.pdf"
           download>
           Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
@@ -76,14 +81,14 @@ export function Intro() {
         <a
           href="https://linkedin.com"
           target="_blank"
-          className="cursor-pointer bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15]  outline-none hover:scale-[1.15] active:scale-105 transition group border border-black/10 hover:text-gray-950"
+          className="cursor-pointer bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15]  outline-none hover:scale-[1.15] active:scale-105 transition group borderBlack hover:text-gray-950"
           rel="noreferrer">
           <BsLinkedin />
         </a>
         <a
           href="https://github.com"
           target="_blank"
-          className="cursor-pointer bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]  outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition group border border-black/10 hover:text-gray-950"
+          className="cursor-pointer bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]  outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition group borderBlack hover:text-gray-950"
           rel="noreferrer">
           <FaGithubSquare />
         </a>

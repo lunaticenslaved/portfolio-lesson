@@ -11,7 +11,10 @@ export function Experience() {
   const { ref, inView } = useListenSectionInView('Experience');
 
   return (
-    <section id="experience" ref={ref} className="max-w-[53rem] scroll-mt-28 text-center sm:mb-40 ">
+    <section
+      id="experience"
+      ref={ref}
+      className="max-w-[53rem] scroll-mt-28 text-center sm:mb-40 mb-28">
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map(({ title, description, location, date, icon }, index) => (
