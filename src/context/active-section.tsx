@@ -43,7 +43,7 @@ export function useActiveSectionContext() {
   return context;
 }
 
-export function useListenSectionInView(section: Section, threshold: number) {
+export function useListenSectionInView(section: Section, threshold?: number) {
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
   const { ref, inView } = useInView({ threshold });
 
