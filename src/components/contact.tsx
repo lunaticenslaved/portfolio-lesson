@@ -28,7 +28,7 @@ export function Contact() {
       }}>
       <SectionHeading>Contact me</SectionHeading>
 
-      <p className="text-gray-700 -mt-6">
+      <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{' '}
         <a href="mailto:example.@gmail.com" className="underline">
           example.@gmail.com
@@ -37,7 +37,7 @@ export function Contact() {
       </p>
 
       <form
-        className="flex flex-col mt-10"
+        className="flex flex-col mt-10 dark:text-black/80"
         action={async formDate => {
           await sendEmail(formDate);
 
@@ -46,13 +46,13 @@ export function Contact() {
         <input
           type="email"
           name="senderEmail"
-          className="h-14 px-4 rounded-lg borderBlack"
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your email"
           required
           maxLength={500}
         />
         <textarea
-          className="borderBlack rounded-lg h-52 my-3 p-4"
+          className="borderBlack rounded-lg h-52 my-3 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your message"
           name="message"
           required
@@ -60,7 +60,7 @@ export function Contact() {
         />
         <button
           type="submit"
-          className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover-active:scale-105">
+          className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover-active:scale-105 dark:bg-white dark:bg-opacity-10">
           Submit{' '}
           <FaPaperPlane
             className="text-xs opacity-70 transition-all 
