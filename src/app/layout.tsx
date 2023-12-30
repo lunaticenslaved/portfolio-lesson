@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { ActiveSectionContextProvider } from '@/context/active-section';
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ActiveSectionContextProvider>
           <Header />
           {children}
+          <Footer />
 
           <Toaster position="top-right" />
         </ActiveSectionContextProvider>
