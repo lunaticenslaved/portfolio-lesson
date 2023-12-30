@@ -7,7 +7,7 @@ import { useListenSectionInView } from '@/context/active-section';
 import { SectionHeading } from './section-heading';
 
 export function About() {
-  const ref = useListenSectionInView('About', 1);
+  const { ref } = useListenSectionInView('About', 1);
 
   return (
     <motion.section

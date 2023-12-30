@@ -7,3 +7,7 @@ body {
   height: 100vh;
   font-family: sans-serif;
 }
+
+html {
+  --line-color: #e5e7eb;
+}

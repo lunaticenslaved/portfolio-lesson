@@ -53,5 +53,5 @@ export function useListenSectionInView(section: Section, threshold?: number) {
     }
   }, [inView, section, setActiveSection, timeOfLastClick]);
 
-  return ref;
+  return { ref, inView };
 }

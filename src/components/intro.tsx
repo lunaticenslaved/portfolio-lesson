@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { useListenSectionInView } from '@/context/active-section';
 
 export function Intro() {
-  const ref = useListenSectionInView('Home', 0.5);
+  const { ref } = useListenSectionInView('Home', 0.5);
 
   return (
     <section
